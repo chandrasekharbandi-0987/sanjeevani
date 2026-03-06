@@ -1,0 +1,411 @@
+You are an expert full-stack software engineer. Build a complete production-ready web application called Sanjeevani, a modern healthcare platform that connects blood donors, recipients, doctors, and hospitals to save lives during emergencies. The application must be user-friendly, secure, scalable, and visually inspiring so users feel motivated to donate blood.
+
+The system must include modern UI design, backend APIs, authentication, role-based dashboards, donor search, emergency alerts, donation tracking, notifications, and real-time communication.
+
+The design should feel like a professional humanitarian medical service similar to the digital platforms used by the American Red Cross.
+
+TECHNOLOGY STACK
+
+Frontend
+React with Vite
+TailwindCSS for styling
+Modern responsive UI components
+Lucide icons
+
+Backend
+Node.js
+Express.js REST API
+
+Database
+MongoDB with Mongoose schemas
+
+Authentication
+JWT authentication
+bcrypt password hashing
+Protected routes
+
+Realtime
+Socket.io for notifications and chat
+
+Maps
+Leaflet or Google Maps API for nearby donor location display
+
+APPLICATION PURPOSE
+
+Sanjeevani allows:
+
+• donors to register and offer blood donation
+• recipients to request blood during emergencies
+• doctors to verify donation eligibility
+• hospitals to coordinate donation events
+• administrators to manage the system
+
+The goal is to reduce emergency response time and encourage voluntary blood donation.
+
+BRANDING AND DESIGN
+
+Create a professional healthcare UI.
+
+Color palette:
+
+Primary medical red #C62828
+Secondary soft red #FF6B6B
+Accent teal #2EC4B6
+Background #F7F9FB
+Text dark grey #1E1E1E
+
+Design must include:
+
+• rounded cards
+• soft shadows
+• clean typography
+• mobile-first responsive layout
+• smooth hover animations
+
+Include a logo combining a heart and blood drop symbol with the name Sanjeevani.
+
+Tagline:
+
+“Donate Blood. Save Lives.”
+
+LANDING PAGE
+
+Create a modern landing page with sections:
+
+Hero section with medical illustration
+Headline:
+
+“Sanjeevani — Donate Blood, Save Lives”
+
+Buttons:
+
+Register as Donor
+Find Blood
+Emergency Request
+
+Additional sections:
+
+About the platform
+How blood donation works
+Importance of donating blood
+Platform features
+Success statistics
+Testimonials
+Contact section
+Footer
+
+Use motivational language encouraging people to donate blood.
+
+USER ROLES
+
+The system must support four roles:
+
+Donor
+Recipient
+Doctor
+Admin
+
+Users choose their role during registration.
+
+Each role must have a separate dashboard.
+
+AUTHENTICATION SYSTEM
+
+Create a secure login and registration system.
+
+Features:
+
+User registration
+Secure login
+JWT authentication
+Session handling
+Logout system
+
+Registration fields:
+
+Full name
+Email
+Phone number
+Password
+City
+Blood group
+Role selection
+
+Additional fields:
+
+Donor
+availability status
+last donation date
+
+Recipient
+required blood group
+hospital name
+emergency contact
+
+Doctor
+hospital name
+medical license number
+
+Admin accounts are created manually.
+
+DATABASE MODELS
+
+Create MongoDB schemas.
+
+User model:
+
+name
+email
+phone
+password
+role
+bloodGroup
+city
+hospital
+licenseNumber
+availability
+locationCoordinates
+createdAt
+
+Donation model:
+
+donorId
+bloodGroup
+lastDonationDate
+availability
+status
+
+Request model:
+
+recipientId
+bloodGroup
+hospital
+urgencyLevel
+location
+doctorApproval
+status
+createdAt
+
+Notification model:
+
+userId
+message
+type
+readStatus
+createdAt
+
+Chat model:
+
+senderId
+receiverId
+message
+timestamp
+
+DASHBOARDS
+
+After login users are redirected to their role dashboard.
+
+DONOR DASHBOARD
+
+Features:
+
+Update donation availability
+View blood requests
+Accept or decline requests
+View donation history
+Receive health reminders
+
+Statistics cards:
+
+Total donations
+Pending requests
+Lives saved
+
+RECIPIENT DASHBOARD
+
+Features:
+
+Search blood donors
+Create emergency request
+Track request status
+
+Statuses:
+
+Pending
+Accepted
+Doctor Approved
+Completed
+
+DOCTOR DASHBOARD
+
+Doctors can:
+
+Verify donor health information
+Approve donation requests
+Confirm successful donations
+
+ADMIN DASHBOARD
+
+Admin features:
+
+Manage users
+Approve doctors
+Monitor donation activity
+View analytics charts
+
+Charts include:
+
+Total donors
+Active requests
+Successful donations
+
+DONOR SEARCH SYSTEM
+
+Create a powerful donor search system.
+
+Filters include:
+
+Blood group
+Location
+Availability
+
+Display donor cards showing:
+
+Name
+Blood group
+City
+Availability
+
+Include Send Request button.
+
+EMERGENCY BLOOD REQUEST SYSTEM
+
+Recipients can create emergency requests with:
+
+Blood group
+Hospital name
+Urgency level
+Location
+Contact number
+
+When submitted:
+
+Matching donors receive notifications.
+
+AI DONOR MATCHING
+
+Implement a simple matching algorithm.
+
+Prioritize donors based on:
+
+Blood group compatibility
+Distance from recipient
+Availability
+Last donation date
+
+Show recommended donors first.
+
+LIVE DONOR MAP
+
+Display nearby donors on a map.
+
+Features:
+
+Show donor locations
+Highlight hospitals
+Display emergency request markers
+
+REAL TIME CHAT
+
+Enable chat between donor and recipient using Socket.io.
+
+Features:
+
+Live messaging
+Donation coordination
+Doctor consultation if needed
+
+NOTIFICATION CENTER
+
+Create a notification system.
+
+Users receive alerts for:
+
+New donation requests
+Request accepted
+Doctor approval
+Donation completion
+
+Notifications appear in the dashboard header.
+
+DONATION HISTORY TRACKING
+
+Donors can view their donation history.
+
+Display:
+
+Donation date
+Hospital
+Status
+
+Include motivational statistics such as:
+
+“Your donations helped save multiple lives.”
+
+API ROUTES
+
+Auth routes:
+
+POST /api/auth/register
+POST /api/auth/login
+
+Users routes:
+
+GET /api/users
+GET /api/users/:id
+
+Requests routes:
+
+POST /api/requests
+GET /api/requests
+
+Donations routes:
+
+POST /api/donations
+GET /api/donations
+
+Notifications routes:
+
+GET /api/notifications
+
+Messages routes:
+
+GET /api/messages
+POST /api/messages
+
+SECURITY
+
+Implement best practices.
+
+Password hashing
+JWT authentication
+Role-based access control
+Input validation
+API error handling
+
+EXTRA FEATURES
+
+Include:
+
+Dark mode toggle
+Responsive mobile design
+Toast notifications
+Loading skeletons
+Profile editing
+Error handling middleware
+
+FINAL GOAL
+
+Generate a complete full-stack Sanjeevani healthcare donation platform with a modern user-friendly interface, secure backend APIs, MongoDB database models, dashboards for all roles, emergency blood request system, donor search and matching, real-time notifications, chat system, and donation tracking.
+
+The final product should look like a real medical service platform designed to save lives and encourage voluntary blood donation.
